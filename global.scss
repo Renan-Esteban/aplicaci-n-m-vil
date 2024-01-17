@@ -1,0 +1,820 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+$colorfondo: #4E6766;
+$colorheader: #1E152A;
+
+ion-content {
+  --background: #{$colorfondo}; /* Utiliza la interpolación de cadenas para aplicar la variable */
+}
+
+ion-toolbar{
+  --background: #{$colorheader};
+  background-color: #1E152A;
+  background: #1E152A;
+  --ion-toolbar-background:#1E152A;
+}
+
+.message-input {
+  width: 100%;
+  border: 1px solid var(--ion-color-medium);
+  border-radius: 6px;
+  background: #fff;
+  resize: none;
+  margin-top: 0px;
+  --padding-start: 8px;
+}
+
+.message {
+  padding: 10px !important;
+  border-radius: 10px !important;
+  margin-bottom: 4px !important;
+  white-space: pre-wrap;
+}
+
+.my-message {
+  background: var(--ion-color-tertiary);
+  color: #fff;
+}
+
+.other-message {
+  background: var(--ion-color-secondary);
+  color: #fff;
+}
+
+.time {
+  color: #dfdfdf;
+  float: right;
+  font-size: small;
+}
+
+
+
+
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+
+
+.small-button {
+  --width: 30px;  /* Ajusta este valor según tus necesidades */
+  --height: 30px;  /* Ajusta este valor según tus necesidades */
+}
+
+
+
+
+
+.popup-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;  /* Ajusta este valor según tus necesidades */
+  height: 90%;  /* Ajusta este valor según tus necesidades */
+  background: #4E6766;
+  border-radius: 8px;
+  box-shadow: transparent;
+  font-family: 'Montserrat', sans-serif;
+  
+    /* Ajusta este valor según tus necesidades */
+}
+
+.popup-modal .boton-seleccionpost:active {
+  transform: scale(0.98);  /* Ajusta este valor según tus necesidades */
+  transition: transform 0.2s ease;  /* Ajusta este valor según tus necesidades */
+}
+
+.boton-seleccionpost:hover {
+  background-color: #F7DD72;
+  color: #1E152A;
+}
+
+
+ion-label {
+  margin-bottom: 10vh;  /* Ajusta este valor según tus necesidades */
+}
+
+label {
+  margin-bottom: 4vh;
+}
+.flex-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.row {
+  display: flex; /* Usar Flexbox */
+  align-items: center; /* Centrar verticalmente los elementos en la fila */
+}
+
+.userwelcome{
+  display: flex;
+  flex-direction: row; /* Organizar elementos en una columna */
+  /* Alinear el texto al centro */
+}
+
+.texto1{
+    font-size: 6vw;;
+    text-align: center;
+    z-index: 2;
+    font-family: 'Montserrat', sans-serif;
+    color: #F7DD72;
+    width: auto; /* Ancho del contenedor en unidades em */
+    height: 1em; /* Altura del contenedor en unidades em */
+}
+
+.texto2{
+  font-size: 3vw;;
+  z-index: 2;
+  font-family: 'Montserrat', sans-serif;
+  
+  width: auto; /* Ancho del contenedor en unidades em */
+  height: 3em; /* Altura del contenedor en unidades em */
+}
+
+.textoiontitle{
+  font-size: 5vw;
+  color: #F7DD72;
+  z-index: 2;
+  font-family: 'Montserrat', sans-serif;
+  width: auto; /* Ancho del contenedor en unidades em */
+  height: 3em; /* Altura del contenedor en unidades em */
+}
+.h1text{
+    font-size: 6vw;;
+    color: #F7DD72;
+    font-weight: 450;
+    letter-spacing: 5px;
+    text-shadow: 2px 5px 1px #1E152A;
+    margin-left: 12%;
+    margin-right: 10%;
+    
+    
+}
+
+ion-card{
+  background: linear-gradient(to right, #1E152A, #4E6766);
+  font-family: 'Montserrat', sans-serif;
+  color: #F7DD72;
+  box-shadow: none;
+  border: solid 4px #F7DD72;
+  border-radius: 10px;
+  animation: border-animation 2s infinite;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.profilecard{
+  background: linear-gradient(to right, #1E152A, #4E6766);
+  font-family: 'Montserrat', sans-serif;
+  height: 80vh;
+  width: 80vw;
+  padding: 20px;
+  color: #F7DD72;
+  box-shadow: none;
+  border: solid 4px #F7DD72;
+  border-radius: 10px;
+  animation: border-animation 2s infinite;
+  display: flex;
+  flex-direction: column;  /* Agrega esta línea */
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+@keyframes border-animation {
+  0% {border-color: #F7DD72;}
+  50% {border-color: #1E152A;}
+  100% {border-color: #F7DD72;}
+}
+
+@media (max-width: 600px) {
+  ion-card-title{
+    font-size: 6px;  /* Ajusta este valor según tus necesidades */
+  }
+
+  .take-trip-button {
+    top: 1em;  /* Ajusta este valor según tus necesidades */
+    height: 3em;  /* Ajusta este valor según tus necesidades */
+    width: 6em;  /* Ajusta este valor según tus necesidades */
+  }
+}
+
+
+ion-card-title{
+  color: #F7DD72;
+  font-size: 16px;
+}
+ion-card-content{
+  top: 0.5em;
+  
+}
+
+.boton-seleccionpost {
+  display: block;
+  width: 23vw;
+  height: auto;
+  top: 2vh;
+  bottom: 2vh;
+  margin: 0 auto;
+  background-color: #1E152A;
+  color: #F7DD72;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  border: solid 2px #F7DD72;
+  background-color: #1E152A;
+  animation: border-animation 2s infinite;
+}
+@keyframes tremble {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(-7deg); }
+  40% { transform: rotate(7deg); }
+  60% { transform: rotate(-7deg); }
+  80% { transform: rotate(7deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.tremble-text {
+  display: inline-block;
+  animation: tremble 4s linear infinite;
+}
+
+
+
+.take-trip-button {
+  position: relative;
+  right: 0em;
+  height: 10vh;
+  width: 20vw;
+  background-color: #1E152A;
+  color: #F7DD72;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  border: solid 2px #F7DD72;
+  font-size: 3vw;
+  animation: border-animation 2s infinite;
+  
+}
+.price-input {
+  width: 50%;  /* Adjust as needed */
+}
+
+p .fechasmall{
+  font-size: 1px;
+}
+
+.montserrat{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.delete-button {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.delete-button ion-icon {
+  font-size: 24px;
+  color: #F7DD72;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.chat-message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #1E152A;
+}
+
+.chat-message-header {
+  margin-top: -4%;
+  font-weight: lighter;
+}
+
+.chat-message-body {
+  margin-top: 5px;
+}
+
+.my-message {
+  align-self: flex-end;
+  background-color: #4f356e;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.inputfoto {
+  align-self: flex-end;
+  background-color: #1E152A;
+  margin-bottom: 10px;
+  width: 80%;
+  margin-left: 6vh;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.other-message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  align-self: flex-start;
+  background-color: #1E152A;
+}
+
+.form-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5vw;
+  background-color: #1E152A;
+  height: 100vh;
+  width: 100%;
+  color: #F7DD72;
+  animation: border-animation 2s infinite;
+  overflow-y: auto;  // Add this line
+}
+
+
+.full-width-button {
+  display: block;
+  width: 100%;
+  height: 10vh;
+  margin: 0 auto;
+  background-color: #1E152A;
+  color: #F7DD72;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  border: solid 2px #F7DD72;
+  background-color: #1E152A;
+  color: #F7DD72;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  border: solid 2px #F7DD72;
+  animation: border-animation 2s infinite;
+
+}
+
+.my-input {
+  width: 200px;  /* Cambia esto al ancho que desees */
+  height: 50px;  /* Cambia esto a la altura que desees */
+  font-size: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.full-width-button2 {
+  display: block;
+  width: 80%;
+  height: 10vh;
+  margin: 0 auto;
+  background-color: #1E152A;
+  color: #F7DD72;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  border: solid 2px #F7DD72;
+  background-color: #1E152A;
+  color: #F7DD72;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  border: solid 2px #F7DD72;
+  animation: border-animation 2s infinite;
+
+}
+
+.cerrarboton {
+  display: block;
+  width: 80vw;
+  height: 10vh;
+  margin: 0 auto;
+  background-color: #1E152A;
+  color: #F7DD72;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  border: solid 2px #F7DD72;
+  background-color: #1E152A;
+  color: #F7DD72;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  border: solid 2px #F7DD72;
+  animation: border-animation 2s infinite;
+
+}
+
+ion-content .bckgrndcontent{
+  background-color: #1E152A;
+}
+
+.take-trip-button:hover {
+  background-color: #F7DD72;
+  color: #1E152A;
+}
+
+.cerrarboton:hover {
+  background-color: #F7DD72;
+  color: #1E152A;
+}
+
+
+
+.card-image {
+  /* Aquí van los estilos para la imagen */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: solid 2px #ffffff;
+
+}
+
+
+/* ngIf="role === 'Estudiante'"*/
+
+.marquee {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  background: #fefefe;
+  color: #333;
+  border: 1px solid #4a4a4a;
+}
+
+@keyframes move {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100vw); }
+}
+
+.moving-image {
+  
+  position: absolute;
+  animation: move 5s linear infinite;
+}
+
+.marquee p {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+  /* Starting position */
+  transform:translateX(100%);
+  /* Apply animation to this element */  
+  animation: marquee 5s linear infinite;
+}
+
+/* Move it (define the animation) */
+@keyframes marquee {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+
+.h2text{
+    font-size: 6vw;;
+    color: #F7DD72;
+    font-weight: 450;
+    letter-spacing: 5px;
+    text-shadow: 2px 5px 1px #1E152A;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+
+
+/*  #1E152A azul oscuro
+    #4E6766 gris verdoso
+    #5AB1BB celeste
+    #A5C882 verd
+    #F7DD72 amarillo */
+
+google-map {
+  width: 500px;
+  height: 300px;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.espacio-vacio {
+    height: 10vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px; /* Establece la altura del espacio vacío según tus necesidades */
+  }
+
+  
+.general-container{
+  width: 80vw;
+  height: 40vh;
+}
+.imgperfilsmall {
+  height: 500px;
+  width: 500px;
+  
+   /* Establece la altura del espacio vacío según tus necesidades */
+}
+
+.profile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  left: -8vw;
+  border:solid 2px #F7DD72;
+  animation: border-animation 2s infinite;
+}
+
+
+
+.tllpp {
+  position: relative;
+  max-width: 50%; /* La imagen no superará el 100% del ancho disponible */
+  max-height: 50%; /* La imagen no superará el 100% de la altura disponible */
+  width: 22%;
+  height: 22%;
+  filter: drop-shadow(5px 5px 2px #1E152A);
+  z-index: 100;
+
+}
+
+.botonreglog {
+    display: flex; /* Activa el modelo de caja flexible */
+    justify-content: space-between; /* Distribuye el espacio disponible entre los botones */
+    width: 80%;
+    margin-left: 10%;
+    
+}
+
+.boton-seleccion {
+    flex: 1; /* Hace que los botones ocupen un espacio igual dentro del contenedor */
+    margin-right: 10px; /* Ajusta el espacio entre los botones según tus preferencias */
+    background-color: rgba(30, 21, 42, 0.8);;
+    height: 2.5em;
+    width: 7.5em;
+    color: #F7DD72;
+    border-top-left-radius: 10px; /* Radio de borde superior izquierdo */
+    border-top-right-radius: 10px; /* Radio de borde superior derecho */
+    border-bottom-left-radius: 10px; /* Radio de borde inferior izquierdo */
+    border-bottom-right-radius: 10px;
+    font-size: 4vw;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 1em;
+    text-shadow: 2px 5px 1px #1E152A;
+}
+
+.boton-seleccion2 {
+  flex: 1; /* Hace que los botones ocupen un espacio igual dentro del contenedor */
+  margin-right: 10px; /* Ajusta el espacio entre los botones según tus preferencias */
+  background-color: rgba(30, 21, 42, 0.8);;
+  height: 5.5em;
+  width: 11.2em;
+  color: #F7DD72;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-top-left-radius: 10px; /* Radio de borde superior izquierdo */
+  border-top-right-radius: 10px; /* Radio de borde superior derecho */
+  border-bottom-left-radius: 10px; /* Radio de borde inferior izquierdo */
+  border-bottom-right-radius: 10px;
+  font-size: 4vw;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1em;
+  text-shadow: 2px 5px 1px #1E152A;
+}
+
+
+
+  
+  .reg-cont{
+    width: 80vw;
+    height: 60vh;
+
+  }
+
+  .tabs-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre las pestañas */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 2vw;
+    color: #fff;
+}
+
+/* Estilos para cada pestaña */
+.tab {
+    flex: 1; /* Cada pestaña ocupa el mismo espacio disponible */
+    text-align: center;
+    padding: 2vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+    background-color: #555;
+}
+
+/* Estilos para los iconos (utiliza tus propios iconos o URLs) */
+.tab i {
+    font-size: 24px;
+}
+
+.tab img {
+    width: 50%;
+    height: 50%;
+    filter: drop-shadow(5px 5px 2px #1E152A);
+}
+
+
+
+  .formulario-registro2 {
+    color: #F7DD72;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+    text-shadow: 2px 5px 1px #1E152A;
+    width: 90vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 20vh;
+    left: 5vw;
+    overflow-y: auto;
+    padding: 2px; /* Agrega espacio alrededor del formulario */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+    z-index: 1; /* Asegura que el formulario esté por encima de la imagen */
+    /* Agregar estilos generales para el formulario si es necesario */
+  }
+  
+
+
+
+  
+  .form-group {
+    margin-bottom: 10px; /* Espacio entre grupos de campos */
+    
+  }
+  
+  ion-label {
+    display: block; /* Colocar las etiquetas en una nueva línea */
+  }
+  
+  ion-input {
+    width: 100%; /* Ancho completo del campo de entrada */
+    height: 8vh;
+    background-color: rgba(90, 177, 187, 0.4) ;
+    border-top-left-radius: 10px; /* Radio de borde superior izquierdo */
+    border-top-right-radius: 10px; /* Radio de borde superior derecho */
+    border-bottom-left-radius: 10px; /* Radio de borde inferior izquierdo */
+    border-bottom-right-radius: 10px; /* Radio de borde inferior derecho */
+    border: 2px solid #F7DD72 !important;
+  }
+
+
+ 
+ 
+
+  /*  #1E152A azul oscuro
+    #4E6766 gris verdoso
+    #5AB1BB celeste
+    #A5C882 verd
+    #F7DD72 amarillo */
+
+    .close-button {
+        /* Estilos para el botón de cierre (X) */
+        background: #1E152A;
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 100%;
+        border: none;
+        cursor: pointer;
+        color: #F7DD72;
+        font-size: 4vw; /* Ajusta el tamaño de fuente según sea necesario */
+        }
+    .header2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+    .h3text {
+        /* Estilos para tu título h1 */
+        margin: 0; /* Elimina el margen predeterminado para alinear con el botón */
+        }
+
+        #loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Asegura que esté en la parte superior de la página */
+          }
+          
+          #loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+          }
+          
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+
+      
+          
+          .vertical-container {
+            display: flex;
+            flex-direction: column;
+          }      
+
+
+
+
+         

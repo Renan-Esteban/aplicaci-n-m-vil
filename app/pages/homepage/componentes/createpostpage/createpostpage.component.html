@@ -1,0 +1,51 @@
+
+
+<ion-content class="bckgrndcontent">
+  
+  <div>
+    
+    
+    <div class="form-container">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h2>Crea un viaje!</h2>
+      <form [formGroup]="postForm" (ngSubmit)="createPost()">
+        <div class="form-group">
+          <ion-label for="destination" position="stacked">Destino</ion-label>
+          <br>
+          <ion-input id="destination" formControlName="destination" type="text"></ion-input>
+        </div>
+        <div class="form-group">
+          <ion-label for="patente" position="stacked">Patente</ion-label>
+          <br>
+          <ion-input id="patente" formControlName="patente" type="text"></ion-input>
+        </div>
+        <div class="form-group">
+          <ion-label for="capacidad" position="stacked">Capacidad del vehículo</ion-label>
+          <br>
+          <ion-input id="capacidad" formControlName="capacidad" type="number"></ion-input>
+          <br>
+          <ion-label for="price" position="stacked">Precio</ion-label>
+          <br>
+          <ion-input id="price" formControlName="price" type="number" class="price-input"></ion-input>
+          <br>
+          <button class="cerrarboton" expand="full" type="submit" [disabled]="!postForm.valid">Crear publicación</button>
+        <br>
+        <button class="cerrarboton"(click)="closeModal()">Cancelar</button>
+        <br>
+        </div> 
+        <!-- Agrega otros campos según sea necesario -->
+        
+        
+      
+      
+      </form>
+    </div>
+    
+  </div>
+</ion-content>

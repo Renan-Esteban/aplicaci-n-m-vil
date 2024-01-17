@@ -1,0 +1,81 @@
+<ion-content>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title style="color:#F7DD72;">Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <div class="vertical-container">
+        <br>
+        <button class="full-width-button2"expand="full" color="light" routerLink="/inicio">Inicio</button>
+        <br>
+        <button class="full-width-button2"expand="full" color="light" (click)="irARegistro()">Registro</button>
+        <br>
+        <button class="full-width-button2"expand="full" color="light" routerLink="/profile">Perfil</button>
+        <br>
+        <button style="background-color:#1E152A;" class="full-width-button2"expand="full" color="light" (click)="signOut()">Cerrar Sesión</button>
+      </div>
+    </ion-content>
+  </ion-menu>
+
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar class="headercolor">
+        <ion-buttons slot="start">
+          <ion-avatar class="profile-image" (click)="openMenu()">
+            <img class="profile-image"*ngIf="profileImageUrl" [src]="profileImageUrl" alt="Profile Image">
+          </ion-avatar>
+        </ion-buttons>
+        <div class="header-content" style="display: flex; align-items: center;">
+          <img class="tllpp" src="assets/TeLlevoAPP.png" />
+          <div class="userwelcome">
+            <ion-title text="right" class="texto2">
+              <p class="tremble-text" style="color:#F7DD72;">Bienvenido! {{profile?.name}}</p>
+            </ion-title>
+            <div *ngIf="role === 'Conductor'">
+              <button class="boton-seleccionpost floating-button " (click)="openCreatePostModal()">Publicar</button>
+              
+              
+            </div>
+          </div>
+        </div>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content class="ion-padding" scrollEvents="true">
+      <div *ngFor="let post of posts">
+        <button class="full-width-button" *ngIf="currentUser.uid === post.creatorUid" (click)="onChatButtonClicked(post.id)">
+          Entrar al chat
+        </button>
+        
+      </div>
+      <br>
+     
+      <ion-card *ngFor="let post of posts">
+        <button *ngIf="currentUser.uid === post.creatorUid" class="delete-button" (click)="deletePost(post.id)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+        <ion-card-header>
+          <ion-card-title>Destino: {{ post.destination }}</ion-card-title>
+          <button  *ngIf="post?.capacidad > 0"  (click)="takeTrip(post)" class="take-trip-button">Tomar viaje</button>
+        </ion-card-header>
+    
+        <ion-card-content>
+          <p>Patente: {{ post.patente }}</p>
+          <p>Nombre: <span style="font-weight: bold;">{{ capitalizeFirstLetter(getCreatorName(post)) }}</span></p>
+          <p>Capacidad: {{ post?.capacidad }}</p>
+          <p>Precio: ${{post.price}}</p>
+          
+          
+          <img [src]="post.mapImageUrl" alt="Map" class="card-image">
+          <p style="font-size: 8px;">Fecha: {{ post.createdAt.toDate() | date:'medium' }}</p>
+          
+        </ion-card-content>
+      </ion-card>
+      
+    </ion-content>
+  </div>
+  
+</ion-content>

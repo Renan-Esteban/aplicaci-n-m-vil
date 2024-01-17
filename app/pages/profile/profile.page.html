@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToActionSheet()">
+        <ion-icon style="color: #F7DD72;" slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  
+    <h2 style="color: #F7DD72; font-family: 'Montserrat', sans-serif;" class="textoiontitle">Perfil</h2>
+  
+    
+  </ion-toolbar>
+  
+</ion-header>
+
+
+<ion-content>
+  <div>
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col size="12">
+        <div>
+          <input style="color: #F7DD72; font-family: 'Montserrat', sans-serif;" class="inputfoto" type="file" (change)="subirImagen($event)" />
+          
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="profile">
+      <ion-col size="12">
+        <ion-avatar class="ion-margin">
+          <img class="imgperfilsmall"*ngIf="profileImageUrl" [src]="profileImageUrl" alt="Profile Image">
+        </ion-avatar>
+
+        <h1>{{ profile.name }}</h1>
+        <p>Email: {{ profile.email }}</p>
+        <p>Usuario: {{ profile.username }}</p>
+        <p>Rol: {{ profile.role }}</p>
+        <p>Bio: {{ profile.bio }}</p>
+        <ion-textarea rows="5" *ngIf="editing" [(ngModel)]="bio"></ion-textarea>
+        <button class="boton-seleccionpost" *ngIf="!editing" (click)="startEditing()">Edit Bio</button>
+        <button class="boton-seleccionpost" *ngIf="editing" (click)="saveBio()">Save Bio</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+</ion-content>
+  
